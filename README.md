@@ -30,4 +30,9 @@ for who?
 
 -anyone interested in information security
 
+Disclaimer
+==========
+-this tool is made for educational purpose 
+
+-iam responsible for illegal usage of this tool.
  
