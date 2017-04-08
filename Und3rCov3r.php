@@ -59,13 +59,7 @@ function Encode($msg,$key){
 
   $arr=array(1,2,3,4,5,6,7,8);
   //ROT8
-  for($i=0;$i<=7;$i++)
-   {
-   
-        $arr[$i]=$arr[$i]+$key;
-        while($arr[$i]>8) $arr[$i]=$arr[$i]-8;
-
-    }
+  ROT8($arr,$key);
 
    $msg=str_replace('<?php','',$msg);
    $msg=str_replace('?>','',$msg);
@@ -127,15 +121,9 @@ function Encode($msg,$key){
 //=======	  
 function Decode($encoded_file,$key){
 
-$arr=array(1,2,3,4,5,6,7,8);
+  $arr=array(1,2,3,4,5,6,7,8);
   //ROT8
-  for($i=0;$i<=7;$i++)
-   {
-   
-        $arr[$i]=$arr[$i]+$key;
-        while($arr[$i]>8) $arr[$i]=$arr[$i]-8;
-
-    }
+  ROT8($arr,$key);
 
   $cont=file_get_contents($encoded_file);
 
@@ -194,3 +182,11 @@ $arr=array(1,2,3,4,5,6,7,8);
 	  echo "\n";
  }
 
+function ROT8(&$arr,$key)
+{
+  for($i=0;$i<=7;$i++)
+   {
+        $arr[$i]=$arr[$i]+$key;
+        while($arr[$i]>8) $arr[$i]=$arr[$i]-8;
+    }
+}
