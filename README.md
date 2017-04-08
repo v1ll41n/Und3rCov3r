@@ -34,5 +34,5 @@ Disclaimer
 ==========
 -this tool is made for educational purpose 
 
--iam responsible for illegal usage of this tool.
+-iam NOT responsible for illegal usage of this tool.
  
